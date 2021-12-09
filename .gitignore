@@ -1,0 +1,18 @@
+# pythonの不要部分
+__pycache__/
+*.py[cod]
+
+# jupyterの不要部分
+.ipynb_checkpoints/
+
+# rustの不要部分
+target/
+
+# その他
+.vscode/
+.python-version
+dist/
+
+# Added by cargo
+
+/target

@@ -1,0 +1,16 @@
+[package]
+name = "error_handling"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "error_handling"
+crate-type = ["cdylib"]
+
+[dependencies]
+thiserror = "1.0.0"
+anyhow = "1.0.51"
+
+[dependencies.pyo3]
+version = "0.15.1"
+features = ["extension-module"]
