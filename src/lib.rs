@@ -12,26 +12,26 @@ create_exception!(error_handling, ExpLargeError, MathError);
 
 
 // crate::error::ErrorをPyErrに変換できるようにする(pyfunctionが認識できる)
-impl std::convert::From<crate::error::MathError> for PyErr {
+impl From<crate::error::MathError> for PyErr {
     fn from(err: crate::error::MathError) -> PyErr {
         MathError::new_err(err.to_string())
     }
 }
 
-impl std::convert::From<crate::error::LogSmallError> for PyErr {
+impl From<crate::error::LogSmallError> for PyErr {
     fn from(err: crate::error::LogSmallError) -> PyErr {
         LogSmallError::new_err(err.to_string())
     }
 }
 
 
-impl std::convert::From<crate::error::ExpLargeError> for PyErr {
+impl From<crate::error::ExpLargeError> for PyErr {
     fn from(err: crate::error::ExpLargeError) -> PyErr {
         ExpLargeError::new_err(err.to_string())
     }
 }
 
-impl std::convert::From<crate::error::DivSmallAbsError> for PyErr {
+impl From<crate::error::DivSmallAbsError> for PyErr {
     fn from(err: crate::error::DivSmallAbsError) -> PyErr {
         pyo3::exceptions::PyValueError::new_err(err.to_string())
     }
